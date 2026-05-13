@@ -377,7 +377,7 @@ MAIN
                 <button class="access-btn"
 
                 onclick="window.open(
-                'https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/#!/0?socketid=W1xVV4OzZvok39hCAAAD'
+                'https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/'
                 )">
 
                     ACCESS STATION 1
@@ -453,7 +453,7 @@ MAIN
                 <button class="access-btn"
 
                 onclick="window.open(
-                '[https://freckles-remote-covenant.ngrok-free.dev/ui#flow/2531f58050f4a1a6](https://freckles-remote-covenant.ngrok-free.dev/ui/#!/0?socketid=KMn-QVZANMehV3m4AAAN#flow%2F2531f58050f4a1a6)'
+                'https://freckles-remote-covenant.ngrok-free.dev/ui/'
                 )">
 
                     ACCESS STATION 2
