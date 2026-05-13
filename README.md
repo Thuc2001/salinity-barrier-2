@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SIEMENS - Saltwater Barrier Dam SCADA</title>
+    <title>SIEMENS SCADA - Saltwater Barrier Dam</title>
 
     <style>
 
@@ -13,83 +13,86 @@
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
+            font-family:"Segoe UI", Arial, sans-serif;
         }
 
         body{
-            background:#0b0f14;
+            background:#050b12;
             color:white;
             min-height:100vh;
         }
 
-        /* TOP HEADER */
+        /* ================= HEADER ================= */
 
         .topbar{
             width:100%;
-            height:70px;
+            height:80px;
             background:#009999;
             display:flex;
             align-items:center;
             justify-content:space-between;
-            padding:0 30px;
-            box-shadow:0 3px 10px rgba(0,0,0,0.4);
+            padding:0 40px;
+            box-shadow:0 3px 15px rgba(0,0,0,0.5);
         }
 
         .logo{
-            font-size:28px;
+            font-size:40px;
             font-weight:bold;
             letter-spacing:2px;
         }
 
-        .system-name{
-            font-size:20px;
-            font-weight:500;
+        .title{
+            font-size:28px;
+            font-weight:600;
         }
 
-        .status-box{
+        .system-status{
             display:flex;
             align-items:center;
             gap:10px;
-            font-size:16px;
+            font-size:18px;
         }
 
         .status-light{
-            width:14px;
-            height:14px;
+            width:16px;
+            height:16px;
             border-radius:50%;
             background:#00ff66;
             box-shadow:0 0 10px #00ff66;
         }
 
-        /* MAIN */
+        /* ================= MAIN ================= */
 
         .main{
-            padding:40px;
+            padding:35px;
         }
 
         .section-title{
-            font-size:30px;
-            margin-bottom:30px;
-            color:#00d9d9;
+            font-size:42px;
+            color:#00e5ff;
+            margin-bottom:40px;
         }
 
-        /* STATION GRID */
+        /* ================= GRID ================= */
 
         .station-grid{
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:30px;
+
+            /* 3 station cùng 1 hàng */
+            grid-template-columns:repeat(3,1fr);
+
+            gap:25px;
         }
 
-        /* CARD */
+        /* ================= CARD ================= */
 
         .station-card{
-            background:#1a1f26;
-            border:2px solid #009999;
-            border-radius:16px;
+            background:#1b222c;
+            border:2px solid #00bcd4;
+            border-radius:18px;
             overflow:hidden;
             transition:0.3s;
-            box-shadow:0 0 15px rgba(0,255,255,0.08);
+            box-shadow:0 0 20px rgba(0,255,255,0.08);
         }
 
         .station-card:hover{
@@ -99,27 +102,29 @@
 
         .card-header{
             background:#009999;
-            padding:18px;
-            font-size:24px;
-            font-weight:bold;
+            padding:22px;
             text-align:center;
+            font-size:30px;
+            font-weight:bold;
         }
 
         .card-body{
-            padding:30px;
+            padding:25px;
         }
+
+        /* ================= PARAMETER ================= */
 
         .parameter{
             display:flex;
             justify-content:space-between;
-            margin-bottom:18px;
-            padding-bottom:10px;
-            border-bottom:1px solid #2d3748;
-            font-size:17px;
+            align-items:center;
+            padding:14px 0;
+            border-bottom:1px solid #2b3645;
+            font-size:18px;
         }
 
         .parameter-name{
-            color:#cbd5e1;
+            color:#dbeafe;
         }
 
         .parameter-value{
@@ -127,54 +132,43 @@
             font-weight:bold;
         }
 
-        /* BUTTON */
+        /* ================= BUTTON ================= */
 
         .access-btn{
             width:100%;
-            margin-top:25px;
-            padding:16px;
+            margin-top:30px;
+            padding:18px;
             border:none;
             border-radius:10px;
             background:#00b894;
             color:white;
-            font-size:18px;
+            font-size:20px;
             font-weight:bold;
             cursor:pointer;
             transition:0.3s;
         }
 
         .access-btn:hover{
-            background:#00d1a7;
+            background:#00d6aa;
             transform:scale(1.02);
         }
 
-        /* FOOTER */
+        /* ================= FOOTER ================= */
 
         footer{
-            text-align:center;
-            padding:20px;
-            color:#94a3b8;
-            border-top:1px solid #1e293b;
             margin-top:50px;
+            text-align:center;
+            color:#94a3b8;
+            padding:20px;
+            border-top:1px solid #1e293b;
         }
 
-        /* RESPONSIVE */
+        /* ================= RESPONSIVE ================= */
 
-        @media(max-width:768px){
+        @media(max-width:1200px){
 
-            .topbar{
-                flex-direction:column;
-                height:auto;
-                gap:10px;
-                padding:15px;
-            }
-
-            .main{
-                padding:20px;
-            }
-
-            .section-title{
-                text-align:center;
+            .station-grid{
+                grid-template-columns:1fr;
             }
 
         }
@@ -185,7 +179,7 @@
 
 <body>
 
-    <!-- TOP BAR -->
+    <!-- ================= HEADER ================= -->
 
     <div class="topbar">
 
@@ -193,18 +187,18 @@
             SIEMENS
         </div>
 
-        <div class="system-name">
+        <div class="title">
             Saltwater Barrier Dam SCADA System
         </div>
 
-        <div class="status-box">
+        <div class="system-status">
             <div class="status-light"></div>
             System Online
         </div>
 
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- ================= MAIN ================= -->
 
     <div class="main">
 
@@ -214,7 +208,9 @@
 
         <div class="station-grid">
 
+            <!-- ================================================= -->
             <!-- STATION 1 -->
+            <!-- ================================================= -->
 
             <div class="station-card">
 
@@ -224,32 +220,53 @@
 
                 <div class="card-body">
 
+                    <!-- dữ liệu realtime từ node-red -->
                     <div class="parameter">
-                        <div class="parameter-name">Gate Status</div>
-                        <div class="parameter-value">NORMAL</div>
+                        <div class="parameter-name">
+                            Upstream Water Level
+                        </div>
+
+                        <div class="parameter-value" id="waterUp1">
+                            0.0 m
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Water Level</div>
-                        <div class="parameter-value">2.35 m</div>
+                        <div class="parameter-name">
+                            Water Level Inside
+                        </div>
+
+                        <div class="parameter-value" id="waterInside1">
+                            0.0 m
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Salinity</div>
-                        <div class="parameter-value">0.8 ppt</div>
+                        <div class="parameter-name">
+                            River Salinity
+                        </div>
+
+                        <div class="parameter-value" id="salinity1">
+                            0.0 ppt
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Communication</div>
-                        <div class="parameter-value">ONLINE</div>
+                        <div class="parameter-name">
+                            Communication
+                        </div>
+
+                        <div class="parameter-value">
+                            ONLINE
+                        </div>
                     </div>
 
-                    <!-- CHANGE YOUR NGROK LINK -->
+                    <!-- BUTTON TRUY CẬP NODE RED -->
 
                     <button class="access-btn"
-                    onclick="window.open('https://your-ngrok-link-1.ngrok-free.app')">
+                    onclick="window.open('https://YOUR-NGROK-STATION1.ngrok-free.app')">
 
-                        ACCESS STATION
+                        ACCESS STATION 1
 
                     </button>
 
@@ -257,7 +274,9 @@
 
             </div>
 
+            <!-- ================================================= -->
             <!-- STATION 2 -->
+            <!-- ================================================= -->
 
             <div class="station-card">
 
@@ -268,31 +287,49 @@
                 <div class="card-body">
 
                     <div class="parameter">
-                        <div class="parameter-name">Gate Status</div>
-                        <div class="parameter-value">NORMAL</div>
+                        <div class="parameter-name">
+                            Upstream Water Level
+                        </div>
+
+                        <div class="parameter-value" id="waterUp2">
+                            0.0 m
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Water Level</div>
-                        <div class="parameter-value">1.92 m</div>
+                        <div class="parameter-name">
+                            Water Level Inside
+                        </div>
+
+                        <div class="parameter-value" id="waterInside2">
+                            0.0 m
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Salinity</div>
-                        <div class="parameter-value">1.1 ppt</div>
+                        <div class="parameter-name">
+                            River Salinity
+                        </div>
+
+                        <div class="parameter-value" id="salinity2">
+                            0.0 ppt
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Communication</div>
-                        <div class="parameter-value">ONLINE</div>
-                    </div>
+                        <div class="parameter-name">
+                            Communication
+                        </div>
 
-                    <!-- CHANGE YOUR NGROK LINK -->
+                        <div class="parameter-value">
+                            ONLINE
+                        </div>
+                    </div>
 
                     <button class="access-btn"
-                    onclick="window.open('https://your-ngrok-link-2.ngrok-free.app')">
+                    onclick="window.open('https://YOUR-NGROK-STATION2.ngrok-free.app')">
 
-                        ACCESS STATION
+                        ACCESS STATION 2
 
                     </button>
 
@@ -300,7 +337,9 @@
 
             </div>
 
+            <!-- ================================================= -->
             <!-- STATION 3 -->
+            <!-- ================================================= -->
 
             <div class="station-card">
 
@@ -311,31 +350,49 @@
                 <div class="card-body">
 
                     <div class="parameter">
-                        <div class="parameter-name">Gate Status</div>
-                        <div class="parameter-value">NORMAL</div>
+                        <div class="parameter-name">
+                            Upstream Water Level
+                        </div>
+
+                        <div class="parameter-value" id="waterUp3">
+                            0.0 m
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Water Level</div>
-                        <div class="parameter-value">2.10 m</div>
+                        <div class="parameter-name">
+                            Water Level Inside
+                        </div>
+
+                        <div class="parameter-value" id="waterInside3">
+                            0.0 m
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Salinity</div>
-                        <div class="parameter-value">0.6 ppt</div>
+                        <div class="parameter-name">
+                            River Salinity
+                        </div>
+
+                        <div class="parameter-value" id="salinity3">
+                            0.0 ppt
+                        </div>
                     </div>
 
                     <div class="parameter">
-                        <div class="parameter-name">Communication</div>
-                        <div class="parameter-value">ONLINE</div>
-                    </div>
+                        <div class="parameter-name">
+                            Communication
+                        </div>
 
-                    <!-- CHANGE YOUR NGROK LINK -->
+                        <div class="parameter-value">
+                            ONLINE
+                        </div>
+                    </div>
 
                     <button class="access-btn"
-                    onclick="window.open('https://your-ngrok-link-3.ngrok-free.app')">
+                    onclick="window.open('https://YOUR-NGROK-STATION3.ngrok-free.app')">
 
-                        ACCESS STATION
+                        ACCESS STATION 3
 
                     </button>
 
@@ -347,13 +404,65 @@
 
     </div>
 
-    <!-- FOOTER -->
+    <!-- ================= FOOTER ================= -->
 
     <footer>
 
-        SCADA Monitoring Platform | IoT2050 + Node-RED Integration
+        SCADA Monitoring Platform | IoT2050 + Node-RED + Modbus TCP
 
     </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /*
+        ===================================================
+        DEMO REALTIME DATA
+        ===================================================
+
+        Sau này Node-RED sẽ gửi dữ liệu thật qua MQTT
+        hoặc HTTP API.
+
+        */
+
+        function randomData(){
+
+            // STATION 1
+            document.getElementById("waterUp1").innerHTML =
+                (Math.random()*3).toFixed(2) + " m";
+
+            document.getElementById("waterInside1").innerHTML =
+                (Math.random()*2).toFixed(2) + " m";
+
+            document.getElementById("salinity1").innerHTML =
+                (Math.random()*5).toFixed(2) + " ppt";
+
+            // STATION 2
+            document.getElementById("waterUp2").innerHTML =
+                (Math.random()*3).toFixed(2) + " m";
+
+            document.getElementById("waterInside2").innerHTML =
+                (Math.random()*2).toFixed(2) + " m";
+
+            document.getElementById("salinity2").innerHTML =
+                (Math.random()*5).toFixed(2) + " ppt";
+
+            // STATION 3
+            document.getElementById("waterUp3").innerHTML =
+                (Math.random()*3).toFixed(2) + " m";
+
+            document.getElementById("waterInside3").innerHTML =
+                (Math.random()*2).toFixed(2) + " m";
+
+            document.getElementById("salinity3").innerHTML =
+                (Math.random()*5).toFixed(2) + " ppt";
+        }
+
+        // update mỗi 2 giây
+        setInterval(randomData,2000);
+
+    </script>
 
 </body>
 
