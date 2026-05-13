@@ -23,9 +23,9 @@
             min-height:100vh;
         }
 
-        /* =========================================
-           TOP HEADER
-        ========================================= */
+        /* ======================================
+           HEADER
+        ====================================== */
 
         .topbar{
 
@@ -82,9 +82,9 @@
 
         }
 
-        /* =========================================
+        /* ======================================
            MAIN
-        ========================================= */
+        ====================================== */
 
         .main{
 
@@ -103,9 +103,9 @@
 
         }
 
-        /* =========================================
+        /* ======================================
            GRID
-        ========================================= */
+        ====================================== */
 
         .station-grid{
 
@@ -117,9 +117,9 @@
 
         }
 
-        /* =========================================
+        /* ======================================
            CARD
-        ========================================= */
+        ====================================== */
 
         .station-card{
 
@@ -164,9 +164,9 @@
 
         }
 
-        /* =========================================
+        /* ======================================
            PARAMETERS
-        ========================================= */
+        ====================================== */
 
         .parameter{
 
@@ -198,9 +198,15 @@
 
         }
 
-        /* =========================================
+        .offline{
+
+            color:#ff4d4d !important;
+
+        }
+
+        /* ======================================
            BUTTON
-        ========================================= */
+        ====================================== */
 
         .access-btn{
 
@@ -235,9 +241,9 @@
 
         }
 
-        /* =========================================
+        /* ======================================
            FOOTER
-        ========================================= */
+        ====================================== */
 
         footer{
 
@@ -255,9 +261,9 @@
 
         }
 
-        /* =========================================
+        /* ======================================
            RESPONSIVE
-        ========================================= */
+        ====================================== */
 
         @media(max-width:1200px){
 
@@ -275,9 +281,9 @@
 
 <body>
 
-    <!-- =========================================
+    <!-- ======================================
          HEADER
-    ========================================= -->
+    ====================================== -->
 
     <div class="topbar">
 
@@ -303,9 +309,9 @@
 
     </div>
 
-    <!-- =========================================
+    <!-- ======================================
          MAIN
-    ========================================= -->
+    ====================================== -->
 
     <div class="main">
 
@@ -317,9 +323,9 @@
 
         <div class="station-grid">
 
-            <!-- =========================================
+            <!-- ======================================
                  STATION 1
-            ========================================= -->
+            ====================================== -->
 
             <div class="station-card">
 
@@ -334,15 +340,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Upstream Water Level
-
                         </div>
 
                         <div class="parameter-value"
                              id="waterUp1">
 
-                             0.0 m
+                             Loading...
 
                         </div>
 
@@ -351,15 +355,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Water Level Inside
-
                         </div>
 
                         <div class="parameter-value"
                              id="waterInside1">
 
-                             0.0 m
+                             Loading...
 
                         </div>
 
@@ -368,15 +370,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             River Salinity
-
                         </div>
 
                         <div class="parameter-value"
                              id="salinity1">
 
-                             0.0 ppt
+                             Loading...
 
                         </div>
 
@@ -385,9 +385,7 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Communication
-
                         </div>
 
                         <div class="parameter-value"
@@ -399,12 +397,10 @@
 
                     </div>
 
-                    <!-- BUTTON -->
-
                     <button class="access-btn"
 
                     onclick="window.open(
-                    'https://YOUR-NGROK-STATION1.ngrok-free.app'
+                    'https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/#!/0?socketid=W1xVV4OzZvok39hCAAAD'
                     )">
 
                         ACCESS STATION 1
@@ -415,9 +411,9 @@
 
             </div>
 
-            <!-- =========================================
+            <!-- ======================================
                  STATION 2
-            ========================================= -->
+            ====================================== -->
 
             <div class="station-card">
 
@@ -432,15 +428,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Upstream Water Level
-
                         </div>
 
                         <div class="parameter-value"
                              id="waterUp2">
 
-                             0.0 m
+                             Loading...
 
                         </div>
 
@@ -449,15 +443,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Water Level Inside
-
                         </div>
 
                         <div class="parameter-value"
                              id="waterInside2">
 
-                             0.0 m
+                             Loading...
 
                         </div>
 
@@ -466,15 +458,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             River Salinity
-
                         </div>
 
                         <div class="parameter-value"
                              id="salinity2">
 
-                             0.0 ppt
+                             Loading...
 
                         </div>
 
@@ -483,9 +473,7 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Communication
-
                         </div>
 
                         <div class="parameter-value"
@@ -497,12 +485,10 @@
 
                     </div>
 
-                    <!-- BUTTON -->
-
                     <button class="access-btn"
 
                     onclick="window.open(
-                    'https://YOUR-NGROK-STATION2.ngrok-free.app'
+                    'https://limit-detail-unruly.ngrok-free.dev/ui/#!/0?socketid=GekZLFScUXBRxHyLAAAB#flow%2F2531f58050f4a1a6'
                     )">
 
                         ACCESS STATION 2
@@ -513,9 +499,9 @@
 
             </div>
 
-            <!-- =========================================
+            <!-- ======================================
                  STATION 3
-            ========================================= -->
+            ====================================== -->
 
             <div class="station-card">
 
@@ -530,15 +516,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Upstream Water Level
-
                         </div>
 
                         <div class="parameter-value"
                              id="waterUp3">
 
-                             0.0 m
+                             No Connection
 
                         </div>
 
@@ -547,15 +531,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Water Level Inside
-
                         </div>
 
                         <div class="parameter-value"
                              id="waterInside3">
 
-                             0.0 m
+                             No Connection
 
                         </div>
 
@@ -564,15 +546,13 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             River Salinity
-
                         </div>
 
                         <div class="parameter-value"
                              id="salinity3">
 
-                             0.0 ppt
+                             No Connection
 
                         </div>
 
@@ -581,29 +561,21 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
-
                             Communication
-
                         </div>
 
-                        <div class="parameter-value"
+                        <div class="parameter-value offline"
                              id="status3">
 
-                             ONLINE
+                             OFFLINE
 
                         </div>
 
                     </div>
 
-                    <!-- BUTTON -->
+                    <button class="access-btn">
 
-                    <button class="access-btn"
-
-                    onclick="window.open(
-                    'https://YOUR-NGROK-STATION3.ngrok-free.app'
-                    )">
-
-                        ACCESS STATION 3
+                        NO STATION LINK
 
                     </button>
 
@@ -615,9 +587,9 @@
 
     </div>
 
-    <!-- =========================================
+    <!-- ======================================
          FOOTER
-    ========================================= -->
+    ====================================== -->
 
     <footer>
 
@@ -626,16 +598,16 @@
 
     </footer>
 
-    <!-- =========================================
-         JAVASCRIPT REALTIME
-    ========================================= -->
+    <!-- ======================================
+         JAVASCRIPT
+    ====================================== -->
 
     <script>
 
         /*
-        ============================================
+        ==========================================
         STATION 1
-        ============================================
+        ==========================================
         */
 
         async function loadStation1(){
@@ -644,7 +616,7 @@
 
                 const response = await fetch(
 
-                    "https://YOUR-NGROK-STATION1.ngrok-free.app/api/status"
+                    "https://chlorophylloid-specifically-angeles.ngrok-free.dev/api/status"
 
                 );
 
@@ -668,14 +640,16 @@
                 document.getElementById("status1").innerHTML =
                     "OFFLINE";
 
+                document.getElementById("status1").classList.add("offline");
+
             }
 
         }
 
         /*
-        ============================================
+        ==========================================
         STATION 2
-        ============================================
+        ==========================================
         */
 
         async function loadStation2(){
@@ -684,7 +658,7 @@
 
                 const response = await fetch(
 
-                    "[https://YOUR-NGROK-STATION2.ngrok-free.app/api/status](https://limit-detail-unruly.ngrok-free.dev/ui/#!/0?socketid=GekZLFScUXBRxHyLAAAB#flow%2F2531f58050f4a1a6)"
+                    "https://limit-detail-unruly.ngrok-free.dev/api/status"
 
                 );
 
@@ -708,54 +682,16 @@
                 document.getElementById("status2").innerHTML =
                     "OFFLINE";
 
-            }
-
-        }
-
-        /*
-        ============================================
-        STATION 3
-        ============================================
-        */
-
-        async function loadStation3(){
-
-            try{
-
-                const response = await fetch(
-
-                    "https://YOUR-NGROK-STATION3.ngrok-free.app/api/status"
-
-                );
-
-                const data = await response.json();
-
-                document.getElementById("waterUp3").innerHTML =
-                    data.waterUp + " m";
-
-                document.getElementById("waterInside3").innerHTML =
-                    data.waterInside + " m";
-
-                document.getElementById("salinity3").innerHTML =
-                    data.salinity + " ppt";
-
-                document.getElementById("status3").innerHTML =
-                    "ONLINE";
-
-            }
-            catch(error){
-
-                document.getElementById("status3").innerHTML =
-                    "OFFLINE";
+                document.getElementById("status2").classList.add("offline");
 
             }
 
         }
 
         /*
-        ============================================
-        UPDATE ALL STATIONS
-        ============================================
+        ==========================================
+        UPDATE ALL
+        ==========================================
         */
 
         function updateAllStations(){
@@ -764,12 +700,12 @@
 
             loadStation2();
 
-            loadStation3();
-
         }
 
         /*
+        ==========================================
         UPDATE EVERY 2 SECONDS
+        ==========================================
         */
 
         setInterval(updateAllStations,2000);
