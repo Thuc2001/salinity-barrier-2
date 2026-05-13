@@ -1,3 +1,6 @@
+# Siemens SCADA Embedded Dashboard Website
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +20,24 @@
     font-family:"Segoe UI", Arial, sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
 
-    background:#071018;
+    background:
+    linear-gradient(
+        rgba(5,15,25,0.88),
+        rgba(5,15,25,0.92)
+    ),
+
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
     color:white;
     min-height:100vh;
 
@@ -34,7 +52,9 @@ HEADER
     width:100%;
     height:85px;
 
-    background:#009999;
+    background:rgba(0,153,153,0.92);
+
+    backdrop-filter:blur(6px);
 
     display:flex;
     justify-content:space-between;
@@ -44,6 +64,10 @@ HEADER
 
     box-shadow:0 3px 15px rgba(0,0,0,0.4);
 
+    position:sticky;
+    top:0;
+    z-index:999;
+
 }
 
 .logo{
@@ -51,6 +75,8 @@ HEADER
     font-size:42px;
     font-weight:bold;
     letter-spacing:2px;
+
+    color:white;
 
 }
 
@@ -96,13 +122,15 @@ MAIN
 
 .section-title{
 
-    font-size:50px;
+    font-size:52px;
 
     color:#00e5ff;
 
     margin-bottom:45px;
 
     text-align:center;
+
+    text-shadow:0 0 20px rgba(0,255,255,0.5);
 
 }
 
@@ -126,7 +154,9 @@ CARD
 
 .station-card{
 
-    background:#1b222c;
+    background:rgba(27,34,44,0.82);
+
+    backdrop-filter:blur(10px);
 
     border:2px solid #00c3ff;
 
@@ -136,7 +166,7 @@ CARD
 
     transition:0.3s;
 
-    box-shadow:0 0 20px rgba(0,255,255,0.08);
+    box-shadow:0 0 25px rgba(0,255,255,0.15);
 
 }
 
@@ -144,7 +174,7 @@ CARD
 
     transform:translateY(-10px);
 
-    box-shadow:0 0 30px rgba(0,255,255,0.2);
+    box-shadow:0 0 35px rgba(0,255,255,0.3);
 
 }
 
@@ -158,6 +188,8 @@ CARD
 
     font-size:34px;
     font-weight:bold;
+
+    letter-spacing:1px;
 
 }
 
@@ -175,7 +207,7 @@ CARD
 
     padding:16px 0;
 
-    border-bottom:1px solid #2b3645;
+    border-bottom:1px solid rgba(255,255,255,0.1);
 
     font-size:19px;
 
@@ -183,7 +215,7 @@ CARD
 
 .parameter-name{
 
-    color:#cbd5e1;
+    color:#dbeafe;
 
 }
 
@@ -230,6 +262,53 @@ BUTTON
 
     transform:scale(1.02);
 
+    box-shadow:0 0 18px rgba(0,255,180,0.4);
+
+}
+
+/* =======================================
+DASHBOARD VIEW
+======================================= */
+
+.dashboard-container{
+
+    margin-top:50px;
+
+    background:rgba(15,23,42,0.88);
+
+    border:2px solid #00c3ff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 30px rgba(0,255,255,0.18);
+
+}
+
+.dashboard-header{
+
+    background:#009999;
+
+    padding:20px;
+
+    font-size:28px;
+    font-weight:bold;
+
+    text-align:center;
+
+}
+
+iframe{
+
+    width:100%;
+
+    height:900px;
+
+    border:none;
+
+    background:white;
+
 }
 
 /* =======================================
@@ -242,13 +321,15 @@ footer{
 
     text-align:center;
 
-    color:#94a3b8;
+    color:#cbd5e1;
 
     padding:20px;
 
-    border-top:1px solid #1e293b;
+    border-top:1px solid rgba(255,255,255,0.1);
 
     font-size:16px;
+
+    background:rgba(0,0,0,0.25);
 
 }
 
@@ -261,6 +342,12 @@ RESPONSIVE
     .station-grid{
 
         grid-template-columns:1fr;
+
+    }
+
+    iframe{
+
+        height:650px;
 
     }
 
@@ -377,12 +464,9 @@ MAIN
                 </div>
 
                 <button class="access-btn"
+                onclick="loadStation1()">
 
-                onclick="window.open(
-                'https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/'
-                )">
-
-                    ACCESS STATION 1
+                    OPEN STATION 1 DASHBOARD
 
                 </button>
 
@@ -453,18 +537,33 @@ MAIN
                 </div>
 
                 <button class="access-btn"
+                onclick="loadStation2()">
 
-                onclick="window.open(
-                'https://freckles-remote-covenant.ngrok-free.dev/ui/'
-                )">
-
-                    ACCESS STATION 2
+                    OPEN STATION 2 DASHBOARD
 
                 </button>
 
             </div>
 
         </div>
+
+    </div>
+
+    <!-- =======================================
+    EMBEDDED DASHBOARD
+    ======================================= -->
+
+    <div class="dashboard-container" id="dashboardSection">
+
+        <div class="dashboard-header" id="dashboardTitle">
+
+            Select Station Dashboard
+
+        </div>
+
+        <iframe id="dashboardFrame"
+        src="https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/">
+        </iframe>
 
     </div>
 
@@ -481,6 +580,48 @@ FOOTER
 
 </footer>
 
+<!-- =======================================
+JAVASCRIPT
+======================================= -->
+
+<script>
+
+function loadStation1(){
+
+    document.getElementById("dashboardTitle").innerHTML =
+    "STATION 1 LIVE DASHBOARD";
+
+    document.getElementById("dashboardFrame").src =
+    "https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/";
+
+    document.getElementById("dashboardSection")
+    .scrollIntoView({behavior:"smooth"});
+
+}
+
+function loadStation2(){
+
+    document.getElementById("dashboardTitle").innerHTML =
+    "STATION 2 LIVE DASHBOARD";
+
+    document.getElementById("dashboardFrame").src =
+    "https://freckles-remote-covenant.ngrok-free.dev/ui/";
+
+    document.getElementById("dashboardSection")
+    .scrollIntoView({behavior:"smooth"});
+
+}
+
+</script>
+
 </body>
 
 </html>
+```
+
+Sau khi nhấn:
+
+* `OPEN STATION 1 DASHBOARD`
+* `OPEN STATION 2 DASHBOARD`
+
+Dashboard sẽ nhúng trực tiếp xuống phía dưới website bằng `iframe`, không mở tab mới nữa.
