@@ -1,6 +1,3 @@
-# Siemens SCADA Embedded Dashboard Website
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -267,7 +264,7 @@ BUTTON
 }
 
 /* =======================================
-DASHBOARD VIEW
+DASHBOARD SECTION
 ======================================= */
 
 .dashboard-container{
@@ -550,19 +547,23 @@ MAIN
     </div>
 
     <!-- =======================================
-    EMBEDDED DASHBOARD
+    DASHBOARD VIEW
     ======================================= -->
 
-    <div class="dashboard-container" id="dashboardSection">
+    <div class="dashboard-container"
+    id="dashboardSection">
 
-        <div class="dashboard-header" id="dashboardTitle">
+        <div class="dashboard-header"
+        id="dashboardTitle">
 
             Select Station Dashboard
 
         </div>
 
-        <iframe id="dashboardFrame"
-        src="https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/">
+        <iframe
+        id="dashboardFrame"
+        src="">
+
         </iframe>
 
     </div>
@@ -588,27 +589,41 @@ JAVASCRIPT
 
 function loadStation1(){
 
-    document.getElementById("dashboardTitle").innerHTML =
+    document.getElementById(
+    "dashboardTitle").innerHTML =
+
     "STATION 1 LIVE DASHBOARD";
 
-    document.getElementById("dashboardFrame").src =
+    document.getElementById(
+    "dashboardFrame").src =
+
     "https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/";
 
-    document.getElementById("dashboardSection")
-    .scrollIntoView({behavior:"smooth"});
+    document.getElementById(
+    "dashboardSection")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
 function loadStation2(){
 
-    document.getElementById("dashboardTitle").innerHTML =
+    document.getElementById(
+    "dashboardTitle").innerHTML =
+
     "STATION 2 LIVE DASHBOARD";
 
-    document.getElementById("dashboardFrame").src =
+    document.getElementById(
+    "dashboardFrame").src =
+
     "https://freckles-remote-covenant.ngrok-free.dev/ui/";
 
-    document.getElementById("dashboardSection")
-    .scrollIntoView({behavior:"smooth"});
+    document.getElementById(
+    "dashboardSection")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
@@ -617,11 +632,3 @@ function loadStation2(){
 </body>
 
 </html>
-```
-
-Sau khi nhấn:
-
-* `OPEN STATION 1 DASHBOARD`
-* `OPEN STATION 2 DASHBOARD`
-
-Dashboard sẽ nhúng trực tiếp xuống phía dưới website bằng `iframe`, không mở tab mới nữa.
