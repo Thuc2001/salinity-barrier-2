@@ -23,9 +23,9 @@
             min-height:100vh;
         }
 
-        /* ======================================
+        /* =====================================
            HEADER
-        ====================================== */
+        ===================================== */
 
         .topbar{
 
@@ -82,9 +82,9 @@
 
         }
 
-        /* ======================================
+        /* =====================================
            MAIN
-        ====================================== */
+        ===================================== */
 
         .main{
 
@@ -95,6 +95,7 @@
         .section-title{
 
             font-size:52px;
+
             color:#00e5ff;
 
             margin-bottom:45px;
@@ -103,9 +104,9 @@
 
         }
 
-        /* ======================================
+        /* =====================================
            GRID
-        ====================================== */
+        ===================================== */
 
         .station-grid{
 
@@ -117,9 +118,9 @@
 
         }
 
-        /* ======================================
+        /* =====================================
            CARD
-        ====================================== */
+        ===================================== */
 
         .station-card{
 
@@ -164,9 +165,9 @@
 
         }
 
-        /* ======================================
+        /* =====================================
            PARAMETERS
-        ====================================== */
+        ===================================== */
 
         .parameter{
 
@@ -204,9 +205,9 @@
 
         }
 
-        /* ======================================
+        /* =====================================
            BUTTON
-        ====================================== */
+        ===================================== */
 
         .access-btn{
 
@@ -241,9 +242,9 @@
 
         }
 
-        /* ======================================
+        /* =====================================
            FOOTER
-        ====================================== */
+        ===================================== */
 
         footer{
 
@@ -261,9 +262,9 @@
 
         }
 
-        /* ======================================
+        /* =====================================
            RESPONSIVE
-        ====================================== */
+        ===================================== */
 
         @media(max-width:1200px){
 
@@ -281,9 +282,9 @@
 
 <body>
 
-    <!-- ======================================
+    <!-- =====================================
          HEADER
-    ====================================== -->
+    ===================================== -->
 
     <div class="topbar">
 
@@ -309,9 +310,9 @@
 
     </div>
 
-    <!-- ======================================
+    <!-- =====================================
          MAIN
-    ====================================== -->
+    ===================================== -->
 
     <div class="main">
 
@@ -323,9 +324,9 @@
 
         <div class="station-grid">
 
-            <!-- ======================================
+            <!-- =====================================
                  STATION 1
-            ====================================== -->
+            ===================================== -->
 
             <div class="station-card">
 
@@ -340,13 +341,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Upstream Water Level
+
                         </div>
 
                         <div class="parameter-value"
                              id="waterUp1">
 
-                             Loading...
+                             ---
 
                         </div>
 
@@ -355,13 +358,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Water Level Inside
+
                         </div>
 
                         <div class="parameter-value"
                              id="waterInside1">
 
-                             Loading...
+                             ---
 
                         </div>
 
@@ -370,13 +375,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             River Salinity
+
                         </div>
 
                         <div class="parameter-value"
                              id="salinity1">
 
-                             Loading...
+                             ---
 
                         </div>
 
@@ -385,13 +392,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Communication
+
                         </div>
 
                         <div class="parameter-value"
                              id="status1">
 
-                             ONLINE
+                             OFFLINE
 
                         </div>
 
@@ -400,7 +409,7 @@
                     <button class="access-btn"
 
                     onclick="window.open(
-                    'https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/#!/0?socketid=W1xVV4OzZvok39hCAAAD'
+                    'https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/'
                     )">
 
                         ACCESS STATION 1
@@ -411,9 +420,9 @@
 
             </div>
 
-            <!-- ======================================
+            <!-- =====================================
                  STATION 2
-            ====================================== -->
+            ===================================== -->
 
             <div class="station-card">
 
@@ -428,13 +437,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Upstream Water Level
+
                         </div>
 
                         <div class="parameter-value"
                              id="waterUp2">
 
-                             Loading...
+                             ---
 
                         </div>
 
@@ -443,13 +454,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Water Level Inside
+
                         </div>
 
                         <div class="parameter-value"
                              id="waterInside2">
 
-                             Loading...
+                             ---
 
                         </div>
 
@@ -458,13 +471,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             River Salinity
+
                         </div>
 
                         <div class="parameter-value"
                              id="salinity2">
 
-                             Loading...
+                             ---
 
                         </div>
 
@@ -473,13 +488,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Communication
+
                         </div>
 
                         <div class="parameter-value"
                              id="status2">
 
-                             ONLINE
+                             OFFLINE
 
                         </div>
 
@@ -488,7 +505,7 @@
                     <button class="access-btn"
 
                     onclick="window.open(
-                    'https://limit-detail-unruly.ngrok-free.dev/ui/#!/0?socketid=GekZLFScUXBRxHyLAAAB#flow%2F2531f58050f4a1a6'
+                    'https://limit-detail-unruly.ngrok-free.dev/ui/'
                     )">
 
                         ACCESS STATION 2
@@ -499,9 +516,9 @@
 
             </div>
 
-            <!-- ======================================
+            <!-- =====================================
                  STATION 3
-            ====================================== -->
+            ===================================== -->
 
             <div class="station-card">
 
@@ -516,13 +533,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Upstream Water Level
+
                         </div>
 
                         <div class="parameter-value"
                              id="waterUp3">
 
-                             No Connection
+                             ---
 
                         </div>
 
@@ -531,13 +550,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Water Level Inside
+
                         </div>
 
                         <div class="parameter-value"
                              id="waterInside3">
 
-                             No Connection
+                             ---
 
                         </div>
 
@@ -546,13 +567,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             River Salinity
+
                         </div>
 
                         <div class="parameter-value"
                              id="salinity3">
 
-                             No Connection
+                             ---
 
                         </div>
 
@@ -561,13 +584,15 @@
                     <div class="parameter">
 
                         <div class="parameter-name">
+
                             Communication
+
                         </div>
 
                         <div class="parameter-value offline"
                              id="status3">
 
-                             OFFLINE
+                             NO CONNECTION
 
                         </div>
 
@@ -587,9 +612,9 @@
 
     </div>
 
-    <!-- ======================================
+    <!-- =====================================
          FOOTER
-    ====================================== -->
+    ===================================== -->
 
     <footer>
 
@@ -598,9 +623,9 @@
 
     </footer>
 
-    <!-- ======================================
+    <!-- =====================================
          JAVASCRIPT
-    ====================================== -->
+    ===================================== -->
 
     <script>
 
@@ -633,6 +658,8 @@
 
                 document.getElementById("status1").innerHTML =
                     "ONLINE";
+
+                document.getElementById("status1").classList.remove("offline");
 
             }
             catch(error){
@@ -676,6 +703,8 @@
                 document.getElementById("status2").innerHTML =
                     "ONLINE";
 
+                document.getElementById("status2").classList.remove("offline");
+
             }
             catch(error){
 
@@ -690,7 +719,7 @@
 
         /*
         ==========================================
-        UPDATE ALL
+        UPDATE ALL STATIONS
         ==========================================
         */
 
