@@ -3,745 +3,553 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SIEMENS SCADA - Saltwater Barrier Dam</title>
+<title>SIEMENS SCADA - Saltwater Barrier Dam</title>
 
-    <style>
+<style>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:"Segoe UI", Arial, sans-serif;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
 
-        body{
-            background:#050b12;
-            color:white;
-            min-height:100vh;
-        }
+body{
 
-        /* =====================================
-           HEADER
-        ===================================== */
+    background:#071018;
+    color:white;
+    min-height:100vh;
 
-        .topbar{
+}
 
-            width:100%;
-            height:85px;
+/* =======================================
+HEADER
+======================================= */
 
-            background:#009999;
+.topbar{
 
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
+    width:100%;
+    height:85px;
 
-            padding:0 40px;
+    background:#009999;
 
-            box-shadow:0 3px 15px rgba(0,0,0,0.5);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        }
+    padding:0 40px;
 
-        .logo{
+    box-shadow:0 3px 15px rgba(0,0,0,0.4);
 
-            font-size:42px;
-            font-weight:bold;
-            letter-spacing:2px;
+}
 
-        }
+.logo{
 
-        .title{
+    font-size:42px;
+    font-weight:bold;
+    letter-spacing:2px;
 
-            font-size:30px;
-            font-weight:600;
+}
 
-        }
+.title{
 
-        .system-status{
+    font-size:28px;
+    font-weight:600;
 
-            display:flex;
-            align-items:center;
-            gap:12px;
+}
 
-            font-size:20px;
+.status{
 
-        }
+    display:flex;
+    align-items:center;
+    gap:12px;
 
-        .status-light{
+    font-size:18px;
 
-            width:16px;
-            height:16px;
+}
 
-            border-radius:50%;
+.light{
 
-            background:#00ff66;
+    width:16px;
+    height:16px;
 
-            box-shadow:0 0 10px #00ff66;
+    border-radius:50%;
 
-        }
+    background:#00ff66;
 
-        /* =====================================
-           MAIN
-        ===================================== */
+    box-shadow:0 0 12px #00ff66;
 
-        .main{
+}
 
-            padding:35px;
+/* =======================================
+MAIN
+======================================= */
 
-        }
+.main{
 
-        .section-title{
+    padding:40px;
 
-            font-size:52px;
+}
 
-            color:#00e5ff;
+.section-title{
 
-            margin-bottom:45px;
+    font-size:50px;
 
-            text-shadow:0 0 20px rgba(0,255,255,0.3);
+    color:#00e5ff;
 
-        }
+    margin-bottom:45px;
 
-        /* =====================================
-           GRID
-        ===================================== */
+}
 
-        .station-grid{
+/* =======================================
+GRID
+======================================= */
 
-            display:grid;
+.station-grid{
 
-            grid-template-columns:repeat(3,1fr);
+    display:grid;
 
-            gap:25px;
+    grid-template-columns:repeat(3,1fr);
 
-        }
+    gap:25px;
 
-        /* =====================================
-           CARD
-        ===================================== */
+}
 
-        .station-card{
+/* =======================================
+CARD
+======================================= */
 
-            background:#1b222c;
+.station-card{
 
-            border:2px solid #00c3ff;
+    background:#1b222c;
 
-            border-radius:18px;
+    border:2px solid #00c3ff;
 
-            overflow:hidden;
+    border-radius:18px;
 
-            transition:0.3s;
+    overflow:hidden;
 
-            box-shadow:0 0 20px rgba(0,255,255,0.08);
+    transition:0.3s;
 
-        }
+    box-shadow:0 0 20px rgba(0,255,255,0.08);
 
-        .station-card:hover{
+}
 
-            transform:translateY(-8px);
+.station-card:hover{
 
-            box-shadow:0 0 30px rgba(0,255,255,0.2);
+    transform:translateY(-10px);
 
-        }
+    box-shadow:0 0 30px rgba(0,255,255,0.2);
 
-        .card-header{
+}
 
-            background:#009999;
+.card-header{
 
-            padding:24px;
+    background:#009999;
 
-            text-align:center;
+    padding:24px;
 
-            font-size:34px;
-            font-weight:bold;
+    text-align:center;
 
-        }
+    font-size:34px;
+    font-weight:bold;
 
-        .card-body{
+}
 
-            padding:28px;
+.card-body{
 
-        }
+    padding:30px;
 
-        /* =====================================
-           PARAMETERS
-        ===================================== */
+}
 
-        .parameter{
+.parameter{
 
-            display:flex;
+    display:flex;
 
-            justify-content:space-between;
+    justify-content:space-between;
 
-            align-items:center;
+    padding:16px 0;
 
-            padding:15px 0;
+    border-bottom:1px solid #2b3645;
 
-            border-bottom:1px solid #2b3645;
+    font-size:19px;
 
-            font-size:20px;
+}
 
-        }
+.parameter-name{
 
-        .parameter-name{
+    color:#cbd5e1;
 
-            color:#dbeafe;
+}
 
-        }
+.parameter-value{
 
-        .parameter-value{
+    color:#00ff99;
 
-            color:#00ff99;
+    font-weight:bold;
 
-            font-weight:bold;
+}
 
-        }
+/* =======================================
+BUTTON
+======================================= */
 
-        .offline{
+.access-btn{
 
-            color:#ff4d4d !important;
+    width:100%;
 
-        }
+    margin-top:30px;
 
-        /* =====================================
-           BUTTON
-        ===================================== */
+    padding:18px;
 
-        .access-btn{
+    border:none;
 
-            width:100%;
+    border-radius:12px;
 
-            margin-top:30px;
+    background:#00b894;
 
-            padding:18px;
+    color:white;
 
-            border:none;
+    font-size:22px;
+    font-weight:bold;
 
-            border-radius:12px;
+    cursor:pointer;
 
-            background:#00b894;
+    transition:0.3s;
 
-            color:white;
+}
 
-            font-size:22px;
-            font-weight:bold;
+.access-btn:hover{
 
-            cursor:pointer;
+    background:#00d8aa;
 
-            transition:0.3s;
+    transform:scale(1.02);
 
-        }
+}
 
-        .access-btn:hover{
+/* =======================================
+FOOTER
+======================================= */
 
-            background:#00d8aa;
+footer{
 
-            transform:scale(1.02);
+    margin-top:50px;
 
-        }
+    text-align:center;
 
-        /* =====================================
-           FOOTER
-        ===================================== */
+    color:#94a3b8;
 
-        footer{
+    padding:20px;
 
-            margin-top:50px;
+    border-top:1px solid #1e293b;
 
-            text-align:center;
+    font-size:16px;
 
-            color:#94a3b8;
+}
 
-            padding:20px;
+/* =======================================
+RESPONSIVE
+======================================= */
 
-            border-top:1px solid #1e293b;
+@media(max-width:1200px){
 
-            font-size:16px;
+    .station-grid{
 
-        }
+        grid-template-columns:1fr;
 
-        /* =====================================
-           RESPONSIVE
-        ===================================== */
+    }
 
-        @media(max-width:1200px){
+}
 
-            .station-grid{
-
-                grid-template-columns:1fr;
-
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
 <body>
 
-    <!-- =====================================
-         HEADER
-    ===================================== -->
+<!-- =======================================
+HEADER
+======================================= -->
 
-    <div class="topbar">
+<div class="topbar">
 
-        <div class="logo">
+    <div class="logo">
 
-            SIEMENS
-
-        </div>
-
-        <div class="title">
-
-            Saltwater Barrier Dam SCADA System
-
-        </div>
-
-        <div class="system-status">
-
-            <div class="status-light"></div>
-
-            System Online
-
-        </div>
+        SIEMENS
 
     </div>
 
-    <!-- =====================================
-         MAIN
-    ===================================== -->
+    <div class="title">
 
-    <div class="main">
-
-        <div class="section-title">
-
-            Remote Monitoring Stations
-
-        </div>
-
-        <div class="station-grid">
-
-            <!-- =====================================
-                 STATION 1
-            ===================================== -->
-
-            <div class="station-card">
-
-                <div class="card-header">
-
-                    STATION 1
-
-                </div>
-
-                <div class="card-body">
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Upstream Water Level
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="waterUp1">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Water Level Inside
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="waterInside1">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            River Salinity
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="salinity1">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Communication
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="status1">
-
-                             OFFLINE
-
-                        </div>
-
-                    </div>
-
-                    <button class="access-btn"
-
-                    onclick="window.open(
-                    'https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/'
-                    )">
-
-                        ACCESS STATION 1
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <!-- =====================================
-                 STATION 2
-            ===================================== -->
-
-            <div class="station-card">
-
-                <div class="card-header">
-
-                    STATION 2
-
-                </div>
-
-                <div class="card-body">
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Upstream Water Level
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="waterUp2">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Water Level Inside
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="waterInside2">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            River Salinity
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="salinity2">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Communication
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="status2">
-
-                             OFFLINE
-
-                        </div>
-
-                    </div>
-
-                    <button class="access-btn"
-
-                    onclick="window.open(
-                    'https://limit-detail-unruly.ngrok-free.dev/ui/'
-                    )">
-
-                        ACCESS STATION 2
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <!-- =====================================
-                 STATION 3
-            ===================================== -->
-
-            <div class="station-card">
-
-                <div class="card-header">
-
-                    STATION 3
-
-                </div>
-
-                <div class="card-body">
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Upstream Water Level
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="waterUp3">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Water Level Inside
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="waterInside3">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            River Salinity
-
-                        </div>
-
-                        <div class="parameter-value"
-                             id="salinity3">
-
-                             ---
-
-                        </div>
-
-                    </div>
-
-                    <div class="parameter">
-
-                        <div class="parameter-name">
-
-                            Communication
-
-                        </div>
-
-                        <div class="parameter-value offline"
-                             id="status3">
-
-                             NO CONNECTION
-
-                        </div>
-
-                    </div>
-
-                    <button class="access-btn">
-
-                        NO STATION LINK
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
+        Saltwater Barrier Dam SCADA System
 
     </div>
 
-    <!-- =====================================
-         FOOTER
-    ===================================== -->
+    <div class="status">
 
-    <footer>
+        <div class="light"></div>
 
-        SCADA Monitoring Platform |
-        IoT2050 + Node-RED + Modbus TCP
+        System Online
 
-    </footer>
+    </div>
 
-    <!-- =====================================
-         JAVASCRIPT
-    ===================================== -->
+</div>
 
-    <script>
+<!-- =======================================
+MAIN
+======================================= -->
 
-        /*
-        ==========================================
+<div class="main">
+
+    <div class="section-title">
+
+        Remote Monitoring Stations
+
+    </div>
+
+    <div class="station-grid">
+
+        <!-- =======================================
         STATION 1
-        ==========================================
-        */
+        ======================================= -->
 
-        async function loadStation1(){
+        <div class="station-card">
 
-            try{
+            <div class="card-header">
 
-                const response = await fetch(
+                STATION 1
 
-                    "https://chlorophylloid-specifically-angeles.ngrok-free.dev/api/status"
+            </div>
 
-                );
+            <div class="card-body">
 
-                const data = await response.json();
+                <div class="parameter">
 
-                document.getElementById("waterUp1").innerHTML =
-                    data.waterUp + " m";
+                    <div class="parameter-name">
 
-                document.getElementById("waterInside1").innerHTML =
-                    data.waterInside + " m";
+                        Communication
 
-                document.getElementById("salinity1").innerHTML =
-                    data.salinity + " ppt";
+                    </div>
 
-                document.getElementById("status1").innerHTML =
-                    "ONLINE";
+                    <div class="parameter-value">
 
-                document.getElementById("status1").classList.remove("offline");
+                        ONLINE
 
-            }
-            catch(error){
+                    </div>
 
-                document.getElementById("status1").innerHTML =
-                    "OFFLINE";
+                </div>
 
-                document.getElementById("status1").classList.add("offline");
+                <div class="parameter">
 
-            }
+                    <div class="parameter-name">
 
-        }
+                        Controller
 
-        /*
-        ==========================================
+                    </div>
+
+                    <div class="parameter-value">
+
+                        IOT2050
+
+                    </div>
+
+                </div>
+
+                <div class="parameter">
+
+                    <div class="parameter-name">
+
+                        SCADA
+
+                    </div>
+
+                    <div class="parameter-value">
+
+                        NODE-RED
+
+                    </div>
+
+                </div>
+
+                <button class="access-btn"
+
+                onclick="window.open(
+                'https://chlorophylloid-specifically-angeles.ngrok-free.dev/ui/#!/0?socketid=W1xVV4OzZvok39hCAAAD'
+                )">
+
+                    ACCESS STATION 1
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- =======================================
         STATION 2
-        ==========================================
-        */
+        ======================================= -->
 
-        async function loadStation2(){
+        <div class="station-card">
 
-            try{
+            <div class="card-header">
 
-                const response = await fetch(
+                STATION 2
 
-                    "https://limit-detail-unruly.ngrok-free.dev/api/status"
+            </div>
 
-                );
+            <div class="card-body">
 
-                const data = await response.json();
+                <div class="parameter">
 
-                document.getElementById("waterUp2").innerHTML =
-                    data.waterUp + " m";
+                    <div class="parameter-name">
 
-                document.getElementById("waterInside2").innerHTML =
-                    data.waterInside + " m";
+                        Communication
 
-                document.getElementById("salinity2").innerHTML =
-                    data.salinity + " ppt";
+                    </div>
 
-                document.getElementById("status2").innerHTML =
-                    "ONLINE";
+                    <div class="parameter-value">
 
-                document.getElementById("status2").classList.remove("offline");
+                        ONLINE
 
-            }
-            catch(error){
+                    </div>
 
-                document.getElementById("status2").innerHTML =
-                    "OFFLINE";
+                </div>
 
-                document.getElementById("status2").classList.add("offline");
+                <div class="parameter">
 
-            }
+                    <div class="parameter-name">
 
-        }
+                        Controller
 
-        /*
-        ==========================================
-        UPDATE ALL STATIONS
-        ==========================================
-        */
+                    </div>
 
-        function updateAllStations(){
+                    <div class="parameter-value">
 
-            loadStation1();
+                        IOT2050
 
-            loadStation2();
+                    </div>
 
-        }
+                </div>
 
-        /*
-        ==========================================
-        UPDATE EVERY 2 SECONDS
-        ==========================================
-        */
+                <div class="parameter">
 
-        setInterval(updateAllStations,2000);
+                    <div class="parameter-name">
 
-        updateAllStations();
+                        SCADA
 
-    </script>
+                    </div>
+
+                    <div class="parameter-value">
+
+                        NODE-RED
+
+                    </div>
+
+                </div>
+
+                <button class="access-btn"
+
+                onclick="window.open(
+                'https://limit-detail-unruly.ngrok-free.dev/ui/#!/0?socketid=GekZLFScUXBRxHyLAAAB#flow%2F2531f58050f4a1a6'
+                )">
+
+                    ACCESS STATION 2
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- =======================================
+        STATION 3
+        ======================================= -->
+
+        <div class="station-card">
+
+            <div class="card-header">
+
+                STATION 3
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="parameter">
+
+                    <div class="parameter-name">
+
+                        Communication
+
+                    </div>
+
+                    <div class="parameter-value">
+
+                        OFFLINE
+
+                    </div>
+
+                </div>
+
+                <div class="parameter">
+
+                    <div class="parameter-name">
+
+                        Controller
+
+                    </div>
+
+                    <div class="parameter-value">
+
+                        NOT CONNECTED
+
+                    </div>
+
+                </div>
+
+                <div class="parameter">
+
+                    <div class="parameter-name">
+
+                        SCADA
+
+                    </div>
+
+                    <div class="parameter-value">
+
+                        NO DATA
+
+                    </div>
+
+                </div>
+
+                <button class="access-btn">
+
+                    NO STATION LINK
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =======================================
+FOOTER
+======================================= -->
+
+<footer>
+
+    SCADA Monitoring Platform |
+    IoT2050 + Node-RED + Modbus TCP
+
+</footer>
 
 </body>
 
