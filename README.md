@@ -1,4 +1,3 @@
-# salinity-barrier-2
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,192 +5,355 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Saltwater Barrier Dam Monitoring System</title>
+    <title>SIEMENS - Saltwater Barrier Dam SCADA</title>
 
     <style>
+
         *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
         }
 
         body{
-            background: linear-gradient(135deg, #0f172a, #1e40af);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            background:#0b0f14;
+            color:white;
+            min-height:100vh;
         }
 
-        .container{
-            width: 90%;
-            max-width: 1200px;
-            text-align: center;
+        /* TOP HEADER */
+
+        .topbar{
+            width:100%;
+            height:70px;
+            background:#009999;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 30px;
+            box-shadow:0 3px 10px rgba(0,0,0,0.4);
         }
 
-        h1{
-            font-size: 42px;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            letter-spacing:2px;
         }
 
-        .subtitle{
-            color: #cbd5e1;
-            margin-bottom: 50px;
-            font-size: 18px;
+        .system-name{
+            font-size:20px;
+            font-weight:500;
         }
+
+        .status-box{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            font-size:16px;
+        }
+
+        .status-light{
+            width:14px;
+            height:14px;
+            border-radius:50%;
+            background:#00ff66;
+            box-shadow:0 0 10px #00ff66;
+        }
+
+        /* MAIN */
+
+        .main{
+            padding:40px;
+        }
+
+        .section-title{
+            font-size:30px;
+            margin-bottom:30px;
+            color:#00d9d9;
+        }
+
+        /* STATION GRID */
 
         .station-grid{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:30px;
         }
 
+        /* CARD */
+
         .station-card{
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 20px;
-            padding: 40px 25px;
-            backdrop-filter: blur(8px);
-            transition: 0.3s;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background:#1a1f26;
+            border:2px solid #009999;
+            border-radius:16px;
+            overflow:hidden;
+            transition:0.3s;
+            box-shadow:0 0 15px rgba(0,255,255,0.08);
         }
 
         .station-card:hover{
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.12);
+            transform:translateY(-8px);
+            box-shadow:0 0 25px rgba(0,255,255,0.2);
         }
 
-        .station-icon{
-            font-size: 60px;
-            margin-bottom: 20px;
+        .card-header{
+            background:#009999;
+            padding:18px;
+            font-size:24px;
+            font-weight:bold;
+            text-align:center;
         }
 
-        .station-title{
-            font-size: 28px;
-            margin-bottom: 15px;
-            font-weight: bold;
+        .card-body{
+            padding:30px;
         }
 
-        .station-desc{
-            color: #dbeafe;
-            margin-bottom: 30px;
-            line-height: 1.6;
+        .parameter{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:18px;
+            padding-bottom:10px;
+            border-bottom:1px solid #2d3748;
+            font-size:17px;
         }
+
+        .parameter-name{
+            color:#cbd5e1;
+        }
+
+        .parameter-value{
+            color:#00ff99;
+            font-weight:bold;
+        }
+
+        /* BUTTON */
 
         .access-btn{
-            display: inline-block;
-            padding: 14px 35px;
-            background: #22c55e;
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
+            width:100%;
+            margin-top:25px;
+            padding:16px;
+            border:none;
+            border-radius:10px;
+            background:#00b894;
+            color:white;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
         }
 
         .access-btn:hover{
-            background: #16a34a;
-            transform: scale(1.05);
+            background:#00d1a7;
+            transform:scale(1.02);
         }
 
+        /* FOOTER */
+
         footer{
-            margin-top: 50px;
-            color: #cbd5e1;
-            font-size: 14px;
+            text-align:center;
+            padding:20px;
+            color:#94a3b8;
+            border-top:1px solid #1e293b;
+            margin-top:50px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .topbar{
+                flex-direction:column;
+                height:auto;
+                gap:10px;
+                padding:15px;
+            }
+
+            .main{
+                padding:20px;
+            }
+
+            .section-title{
+                text-align:center;
+            }
+
         }
 
     </style>
+
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- TOP BAR -->
 
-        <h1>SALTWATER BARRIER DAM SYSTEM</h1>
+    <div class="topbar">
 
-        <div class="subtitle">
-            IoT2050 and Node-RED Remote Monitoring Platform
+        <div class="logo">
+            SIEMENS
+        </div>
+
+        <div class="system-name">
+            Saltwater Barrier Dam SCADA System
+        </div>
+
+        <div class="status-box">
+            <div class="status-light"></div>
+            System Online
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main">
+
+        <div class="section-title">
+            Remote Monitoring Stations
         </div>
 
         <div class="station-grid">
 
-            <!-- Station 1 -->
+            <!-- STATION 1 -->
+
             <div class="station-card">
 
-                <div class="station-icon">🌊</div>
-
-                <div class="station-title">
-                    Station 1
+                <div class="card-header">
+                    STATION 1
                 </div>
 
-                <div class="station-desc">
-                    Remote monitoring and control system for Saltwater Barrier Dam Station 1
-                </div>
+                <div class="card-body">
 
-                <!-- Replace with your Ngrok link -->
-                <a href="https://your-ngrok-link-1.ngrok-free.app"
-                   target="_blank"
-                   class="access-btn">
-                    Access Station
-                </a>
+                    <div class="parameter">
+                        <div class="parameter-name">Gate Status</div>
+                        <div class="parameter-value">NORMAL</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Water Level</div>
+                        <div class="parameter-value">2.35 m</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Salinity</div>
+                        <div class="parameter-value">0.8 ppt</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Communication</div>
+                        <div class="parameter-value">ONLINE</div>
+                    </div>
+
+                    <!-- CHANGE YOUR NGROK LINK -->
+
+                    <button class="access-btn"
+                    onclick="window.open('https://your-ngrok-link-1.ngrok-free.app')">
+
+                        ACCESS STATION
+
+                    </button>
+
+                </div>
 
             </div>
 
-            <!-- Station 2 -->
+            <!-- STATION 2 -->
+
             <div class="station-card">
 
-                <div class="station-icon">🌊</div>
-
-                <div class="station-title">
-                    Station 2
+                <div class="card-header">
+                    STATION 2
                 </div>
 
-                <div class="station-desc">
-                    Remote monitoring and control system for Saltwater Barrier Dam Station 2
-                </div>
+                <div class="card-body">
 
-                <!-- Replace with your Ngrok link -->
-                <a href="https://your-ngrok-link-2.ngrok-free.app"
-                   target="_blank"
-                   class="access-btn">
-                    Access Station
-                </a>
+                    <div class="parameter">
+                        <div class="parameter-name">Gate Status</div>
+                        <div class="parameter-value">NORMAL</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Water Level</div>
+                        <div class="parameter-value">1.92 m</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Salinity</div>
+                        <div class="parameter-value">1.1 ppt</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Communication</div>
+                        <div class="parameter-value">ONLINE</div>
+                    </div>
+
+                    <!-- CHANGE YOUR NGROK LINK -->
+
+                    <button class="access-btn"
+                    onclick="window.open('https://your-ngrok-link-2.ngrok-free.app')">
+
+                        ACCESS STATION
+
+                    </button>
+
+                </div>
 
             </div>
 
-            <!-- Station 3 -->
+            <!-- STATION 3 -->
+
             <div class="station-card">
 
-                <div class="station-icon">🌊</div>
-
-                <div class="station-title">
-                    Station 3
+                <div class="card-header">
+                    STATION 3
                 </div>
 
-                <div class="station-desc">
-                    Remote monitoring and control system for Saltwater Barrier Dam Station 3
-                </div>
+                <div class="card-body">
 
-                <!-- Replace with your Ngrok link -->
-                <a href="https://your-ngrok-link-3.ngrok-free.app"
-                   target="_blank"
-                   class="access-btn">
-                    Access Station
-                </a>
+                    <div class="parameter">
+                        <div class="parameter-name">Gate Status</div>
+                        <div class="parameter-value">NORMAL</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Water Level</div>
+                        <div class="parameter-value">2.10 m</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Salinity</div>
+                        <div class="parameter-value">0.6 ppt</div>
+                    </div>
+
+                    <div class="parameter">
+                        <div class="parameter-name">Communication</div>
+                        <div class="parameter-value">ONLINE</div>
+                    </div>
+
+                    <!-- CHANGE YOUR NGROK LINK -->
+
+                    <button class="access-btn"
+                    onclick="window.open('https://your-ngrok-link-3.ngrok-free.app')">
+
+                        ACCESS STATION
+
+                    </button>
+
+                </div>
 
             </div>
 
         </div>
 
-        <footer>
-            Developed for IoT2050 SCADA Monitoring System
-        </footer>
-
     </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        SCADA Monitoring Platform | IoT2050 + Node-RED Integration
+
+    </footer>
 
 </body>
 
