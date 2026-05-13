@@ -102,6 +102,8 @@ MAIN
 
     margin-bottom:45px;
 
+    text-align:center;
+
 }
 
 /* =======================================
@@ -112,9 +114,9 @@ GRID
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
 
-    gap:25px;
+    gap:35px;
 
 }
 
@@ -254,7 +256,7 @@ footer{
 RESPONSIVE
 ======================================= */
 
-@media(max-width:1200px){
+@media(max-width:1000px){
 
     .station-grid{
 
@@ -457,78 +459,6 @@ MAIN
                 )">
 
                     ACCESS STATION 2
-
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- =======================================
-        STATION 3
-        ======================================= -->
-
-        <div class="station-card">
-
-            <div class="card-header">
-
-                STATION 3
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="parameter">
-
-                    <div class="parameter-name">
-
-                        Communication
-
-                    </div>
-
-                    <div class="parameter-value">
-
-                        OFFLINE
-
-                    </div>
-
-                </div>
-
-                <div class="parameter">
-
-                    <div class="parameter-name">
-
-                        Controller
-
-                    </div>
-
-                    <div class="parameter-value">
-
-                        NOT CONNECTED
-
-                    </div>
-
-                </div>
-
-                <div class="parameter">
-
-                    <div class="parameter-name">
-
-                        SCADA
-
-                    </div>
-
-                    <div class="parameter-value">
-
-                        NO DATA
-
-                    </div>
-
-                </div>
-
-                <button class="access-btn">
-
-                    NO STATION LINK
 
                 </button>
 
