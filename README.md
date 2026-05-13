@@ -453,7 +453,7 @@ MAIN
                 <button class="access-btn"
 
                 onclick="window.open(
-                'https://limit-detail-unruly.ngrok-free.dev/ui/#!/0?socketid=GekZLFScUXBRxHyLAAAB#flow%2F2531f58050f4a1a6'
+                'https://freckles-remote-covenant.ngrok-free.dev/#flow/2531f58050f4a1a6'
                 )">
 
                     ACCESS STATION 2
